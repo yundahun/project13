@@ -11,20 +11,21 @@ public class Quiz1 {
 		
 		// Q.익명 클래스를 사용하여 max()를 호출하세요
 		MyNumber number2 = new MyNumber() {
-			
+
 			@Override
 			public int max(int x, int y) {
-				int max = 0;		
-				if(x > y) {
-					return x;
-				} else {
-					return y;		
-				}
+				int max = x > y ? x : y;
+				return max;
 			}
+			
 		};	
+		System.out.println(number2.max(10, 20));
 		
 		// Q.람다식 함수를 사용하여 max()를 호출하세요
-		
+		MyNumber number3 = (x, y) -> {
+			int max = x > y ? x : y;
+			return max;
+		};
 	}
 
 }
